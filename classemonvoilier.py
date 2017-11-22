@@ -14,7 +14,7 @@ class Voilierclient:
         self.orientvent=0
         self.taille=0
     
-    def intcom(self,ip,port):
+    def initcom(self,ip,port):
         self.ipserveur=ip
         self.port=port
         self.sock=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -47,19 +47,19 @@ class Voilierclient:
         self.gite=ord (data[12])
     
 
-monVoilierClient=Voilierclient()
-monVoilierClient.intcom("127.0.0.1",5050)
-monVoilierClient.valsf=30
-monVoilierClient.id=22
-monVoilierClient.valgv=90
-monVoilierClient.txrx()
-print "latitude =",monVoilierClient.lat
-print "longitude =",monVoilierClient.longe
-print "id =",monVoilierClient.id
-print "taille =",monVoilierClient.taille
-print "vitvent =",monVoilierClient.vitvent
-print "orientvent =",monVoilierClient.orientvent
-print "gite =",monVoilierClient.gite
+##monVoilierClient=Voilierclient()
+##monVoilierClient.intcom("127.0.0.1",5050)
+##monVoilierClient.valsf=30
+##monVoilierClient.id=22
+##monVoilierClient.valgv=90
+##monVoilierClient.txrx()
+##print "latitude =",monVoilierClient.lat
+##print "longitude =",monVoilierClient.longe
+##print "id =",monVoilierClient.id
+##print "taille =",monVoilierClient.taille
+##print "vitvent =",monVoilierClient.vitvent
+##print "orientvent =",monVoilierClient.orientvent
+##print "gite =",monVoilierClient.gite
 
 
 
