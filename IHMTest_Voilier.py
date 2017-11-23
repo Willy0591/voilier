@@ -27,8 +27,10 @@ class IHM(tk.Frame):
         self.lbLongitudeValue = tk.Label(self, text="0")
         self.lbVitVentValue = tk.Label(self, text="0")
         self.lbOrientVentValue = tk.Label(self, text="0")
-        self.inputIP = tk.Entry(self,textvariable="127.0.0.1", width=15)
-        self.inputPort = tk.Entry(self, textvariable="5050", width=5)
+        self.inputIP = tk.Entry(self,width=15)
+        self.inputIP.insert(0,"127.0.0.1")
+        self.inputPort = tk.Entry(self,width=5)
+        self.inputPort.insert(0,"5050")
         self.boutonConnect = tk.Button(self, text="Connect",command=self.connect)
         self.boutonSend = tk.Button(self, text="Send",command=self.send)
         self.scaleGV = tk.Scale(self, orient=tk.HORIZONTAL, from_=0,to=180,command=self.valueGVChanged)
@@ -78,6 +80,11 @@ class IHM(tk.Frame):
         self.monVoilier.valgv = self.scaleGV.get()
         self.monVoilier.valsf = self.scaleSafran.get()
         self.monVoilier.txrx()
+        self.lbLongitudeValue.configure(text=self.monVoilier.longe)
+        self.lbLatitudeValue.configure(text=self.monVoilier.lat)
+        self.lbOrientVentValue.configure(text=self.monVoilier.orientvent)
+        self.lbGiteValue.configure(text=self.monVoilier.gite)
+        self.lbVitVentValue.configure(text=self.monVoilier.vitvent)
 
 
 
